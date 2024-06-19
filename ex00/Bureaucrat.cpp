@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:10 by amak              #+#    #+#             */
-/*   Updated: 2024/06/19 02:08:08 by amak             ###   ########.fr       */
+/*   Updated: 2024/06/19 02:32:42 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade) :
 	std::cout << BLUE << "[BUREAUCRAT]: parameters constructor called" << RESET
 		<< std::endl;	
 	if (grade < 1)
-		throw GradeTooLowException();
-	else if (grade > 150)
 		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
 }
 
 std::string	Bureaucrat::getName() const {
@@ -56,27 +56,32 @@ unsigned int	Bureaucrat::getGrade() const {
 }
 
 void	Bureaucrat::incrementGrade() {
-	if (this->_grade + 1 > 150)
-		throw GradeTooHighException();
-	this->_grade += 1;
-}
-
-void	Bureaucrat::decrememtGrade() {
+	std::cout << BLUE << "[BUREAUCRAT]: incrementGrade() member function called"
+		<< RESET << std::endl;
 	if (this->_grade - 1 < 1)
 		throw GradeTooHighException();
 	this->_grade -= 1;
 }
 
+void	Bureaucrat::decrementGrade() {
+	std::cout << BLUE << "[BUREAUCRAT]: decrementGrade() member function called"
+		<< RESET << std::endl;
+	if (this->_grade + 1 > 150)
+		throw GradeTooHighException();
+	this->_grade += 1;
+}
+
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-	return ("Grade value is higher than 150");
+	return ("Grade cannot be higher than 1");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-	return ("Grade value is lower than 1");
+	return ("Grade cannot be lower than 150");
 }
 
 std::ostream	&operator<<(std::ostream &output, const Bureaucrat &bureaucrat)
 {
-	output << bureaucrat.getName() << "bureaucrat grade "
+	output << bureaucrat.getName() << " bureaucrat grade "
 		<< bureaucrat.getGrade() << "." << std::endl;
+	return output;
 }
