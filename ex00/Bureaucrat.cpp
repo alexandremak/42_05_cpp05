@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:10 by amak              #+#    #+#             */
-/*   Updated: 2024/06/19 02:32:42 by amak             ###   ########.fr       */
+/*   Updated: 2024/06/20 00:09:47 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &otherBureaucrat) :
 }
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &otherBureaucrat) {
-	std::cout << BLUE << "[BUREAUCRAT]: copy assignement constructor called"
+	std::cout << BLUE << "[BUREAUCRAT]: copy assignment constructor called"
 		<< RESET << std::endl;
 	if (this != &otherBureaucrat)
 		this->_grade = otherBureaucrat._grade;
