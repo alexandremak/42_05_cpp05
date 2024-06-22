@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:50:56 by amak              #+#    #+#             */
-/*   Updated: 2024/06/20 00:50:03 by amak             ###   ########.fr       */
+/*   Updated: 2024/06/22 16:53:05 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 const std::string BLUE = "\033[34m";
 const std::string RESET = "\033[0m";
+
+class Form;
 
 class Bureaucrat {
 	public:

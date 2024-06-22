@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 23:40:07 by amak              #+#    #+#             */
-/*   Updated: 2024/06/20 00:44:52 by amak             ###   ########.fr       */
+/*   Updated: 2024/06/22 16:52:53 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 const std::string RED = "\033[31m";
 
+class Bureaucrat;
+
 class Form {
 	public:
 		Form();
@@ -27,7 +29,7 @@ class Form {
 		Form &operator=(const Form &otherForm);
 		~Form();
 
-		Form(std::string name, bool isSigned, unsigned int gradeSigned,
+		Form(std::string name, unsigned int gradeSign,
 			unsigned int gradeExecute);
 		std::string		getName() const;
 		bool			getIsSigned() const;

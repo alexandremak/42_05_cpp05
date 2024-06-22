@@ -6,11 +6,11 @@
 #    By: amak <amak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 23:39:18 by amak              #+#    #+#              #
-#    Updated: 2024/06/19 23:39:36 by amak             ###   ########.fr        #
+#    Updated: 2024/06/22 16:46:54 by amak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FormUpMmaggots
+NAME = FormUpMaggots
 
 CXX = c++
 
