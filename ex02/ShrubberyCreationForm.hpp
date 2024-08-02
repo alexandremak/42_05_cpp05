@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 14:27:32 by amak              #+#    #+#             */
-/*   Updated: 2024/06/23 15:54:49 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/02 21:05:55 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <fstream>
 # include "AForm.hpp"
 
+const std::string GREEN = "\033[32m";
+
 class ShrubberyCreationForm : public AForm {
 	public:
 		ShrubberyCreationForm(std::string target);
@@ -27,6 +29,9 @@ class ShrubberyCreationForm : public AForm {
 		~ShrubberyCreationForm();
 		
 		std::string	getTarget() const;
+
+		virtual void	execute(Bureaucrat const & executor) const;
+
 		
 	private:
 		ShrubberyCreationForm();

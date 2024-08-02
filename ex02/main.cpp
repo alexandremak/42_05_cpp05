@@ -6,17 +6,18 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:20 by amak              #+#    #+#             */
-/*   Updated: 2024/06/23 14:11:49 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/02 21:09:38 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <iostream>
 
 int main() {	
 	// unsigned int grade = 150;
 	// unsigned int grade = 1;
-	unsigned int grade = 150;
+	unsigned int grade = 149;
 
 
 	try {
@@ -29,15 +30,16 @@ int main() {
 		montenegro.decrementGrade();
 		std::cout << montenegro << std::endl;
 
-		AForm formulario("Autorizacao", 150, 150);
-		std::cout << formulario << std::endl;
+		ShrubberyCreationForm arvore("Arvore");
+		std::cout << arvore << std::endl;
 
-		montenegro.signForm(formulario);
+		montenegro.signForm(arvore);
+		std::cout << arvore << std::endl;
 
-		std::cout << formulario << std::endl;
-
-		AForm copiaFormulario(formulario);
+		ShrubberyCreationForm copiaFormulario(arvore);
 		std::cout << copiaFormulario << std::endl;
+
+		arvore.execute(montenegro);
 	}
 	catch (Bureaucrat::GradeTooHighException &exception) {
 		std::cerr << "[BUREAUCRAT]: GradeTooHighException: " << exception.what()

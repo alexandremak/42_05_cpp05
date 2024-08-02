@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 14:07:53 by amak              #+#    #+#             */
-/*   Updated: 2024/06/23 16:51:21 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/02 21:24:16 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,10 @@ void	AForm::beSigned(const Bureaucrat &bureaucrat) {
 		std::cout << "AForm is already signed" << std::endl;
 }
 
- void	AForm::execute(Bureaucrat const & executor) const {
+void	AForm::execute(Bureaucrat const &executor) const { 
 	if (!this->_isSigned)
 		std::cout << "The form isn't signed." << std::endl;
+	(void)executor;
  }
 
 const char *AForm::GradeTooHighException::what() const throw() {
