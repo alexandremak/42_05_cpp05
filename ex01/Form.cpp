@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 23:52:36 by amak              #+#    #+#             */
-/*   Updated: 2024/08/09 22:41:25 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 23:48:37 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,14 @@ unsigned int	Form::getGradeExecute() const {
 }
 
 void	Form::beSigned(const Bureaucrat &bureaucrat) {
+	std::cout << RED << "[FORM]: beSigned member function called" << RESET
+		<< std::endl;
 	if (!this->_isSigned)
-		if (bureaucrat.getGrade() <= this->_gradeSign)
+		if (bureaucrat.getGrade() <= this->_gradeSign) {
 			this->_isSigned = true;
+			std::cout << bureaucrat.getName() << " signed " << this->_name
+				<< std::endl;
+		}
 		else
 			throw GradeTooLowException();
 	else

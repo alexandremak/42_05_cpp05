@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:20 by amak              #+#    #+#             */
-/*   Updated: 2024/08/09 22:30:06 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 23:49:27 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,18 @@ int main() {
 	try {
 		Bureaucrat montenegro("Montenegro", grade);
 		std::cout << montenegro << std::endl;
-		
 		montenegro.incrementGrade();
 		std::cout << montenegro << std::endl;
-
 		montenegro.decrementGrade();
 		std::cout << montenegro << std::endl;
 		std::cout << std::endl;
 
 		Form formulario("Autorizacao", 150, 150);
 		std::cout << formulario << std::endl;
-
 		montenegro.signForm(formulario);
-
 		std::cout << formulario << std::endl;
+		montenegro.signForm(formulario);
+		std::cout << std::endl;
 
 		Form copiaFormulario(formulario);
 		std::cout << copiaFormulario << std::endl;

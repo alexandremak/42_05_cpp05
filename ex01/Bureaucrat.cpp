@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:10 by amak              #+#    #+#             */
-/*   Updated: 2024/08/09 22:28:05 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 23:47:35 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,9 @@ void	Bureaucrat::decrementGrade() {
 
 void	Bureaucrat::signForm(Form &form) {
 	try {
+		std::cout << BLUE << "[BUREAUCRAT]: signForm member function called"
+			<< RESET << std::endl;
 		form.beSigned(*this);
-		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
 	catch (const Form::GradeTooLowException &exception) {
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because his "
