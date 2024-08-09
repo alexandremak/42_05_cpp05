@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 23:52:36 by amak              #+#    #+#             */
-/*   Updated: 2024/08/09 22:28:20 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 22:41:25 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	Form::beSigned(const Bureaucrat &bureaucrat) {
 		else
 			throw GradeTooLowException();
 	else
-		std::cout << "Form is already signed" << std::endl;
+		std::cout << this->_name << " is already signed!" << std::endl;
 }
 
 const char *Form::GradeTooHighException::what() const throw() {
@@ -91,14 +91,14 @@ const char *Form::GradeTooLowException::what() const throw() {
 }
 
 std::ostream	&operator<<(std::ostream &output, const Form &form) {
-	output << "Form " << form.getName();
+	output << form.getName();
 	if (form.getIsSigned())
-		output << " is signed, ";
+		output << " is signed, needed a minimum grade " << form.getGradeSign()
+			<< " to be signed";
 	else
-		output << " isn't signed, ";
-	output << "needs a minimum grade " << form.getGradeSign()
-	<< " to be signed and a minimum grade " << form.getGradeExecute()
-	<< " to be executed.";
+		output << " isn't signed, needs a minimum grade " << form.getGradeSign()
+			<< " to be signed";
+	output << " and a minimum grade " << form.getGradeExecute() << " to be executed.";
 	return output;	
 }
 
