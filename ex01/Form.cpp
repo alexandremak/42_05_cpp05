@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 23:52:36 by amak              #+#    #+#             */
-/*   Updated: 2024/06/22 22:47:48 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 22:28:20 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ std::ostream	&operator<<(std::ostream &output, const Form &form) {
 		output << " isn't signed, ";
 	output << "needs a minimum grade " << form.getGradeSign()
 	<< " to be signed and a minimum grade " << form.getGradeExecute()
-	<< " to be executed." << std::endl;
+	<< " to be executed.";
 	return output;	
 }
 
