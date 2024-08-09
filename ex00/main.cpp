@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:20 by amak              #+#    #+#             */
-/*   Updated: 2024/06/23 14:12:18 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 22:23:50 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main() {	
 	// unsigned int grade = 150;
 	// unsigned int grade = 1;
-	unsigned int grade = 151;
+	unsigned int grade = 10;
 
 
 	try {
