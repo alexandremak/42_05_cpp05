@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 14:42:49 by amak              #+#    #+#             */
-/*   Updated: 2024/08/02 21:04:17 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 20:12:50 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const
 	std::cout << GREEN << "[SHRUBBERYCREATINGFORM]: copy assigment constructor called"
 		<< RESET << std::endl;
 	if (this != &otherSCForm)
-  		AForm::operator=(otherSCForm);
+		AForm::operator=(otherSCForm);
 	return *this;
 }
 
@@ -43,7 +43,13 @@ std::string	ShrubberyCreationForm::getTarget() const {
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	if (!this->getIsSigned() || executor.getGrade() > this->getGradeExecute())
+	std::cout << GREEN << "[SHRUBBERYCREATINGFORM]: execute member function called"
+		<< RESET << std::endl;
+	if (!this->getIsSigned()) {
+		std::cout << "The form isn't signed." << std::endl;
+		return;
+	}	
+	if (executor.getGrade() > this->getGradeExecute())
 		throw GradeTooLowException();
 	std::ofstream file((this->getName() + "_shrubbery").c_str());
 	if (!file.is_open()) {

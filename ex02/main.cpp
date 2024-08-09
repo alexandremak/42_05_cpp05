@@ -6,40 +6,40 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:20 by amak              #+#    #+#             */
-/*   Updated: 2024/08/02 21:09:38 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 20:14:37 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include <iostream>
 
 int main() {	
 	// unsigned int grade = 150;
 	// unsigned int grade = 1;
-	unsigned int grade = 149;
+	unsigned int grade = 20;
 
 
 	try {
 		Bureaucrat montenegro("Montenegro", grade);
 		std::cout << montenegro << std::endl;
 
-		montenegro.incrementGrade();
-		std::cout << montenegro << std::endl;
+		ShrubberyCreationForm arvoreform("Formulario Arvore");
+		std::cout << arvoreform << std::endl;
 
-		montenegro.decrementGrade();
-		std::cout << montenegro << std::endl;
+		montenegro.signForm(arvoreform);
+		std::cout << arvoreform << std::endl;
 
-		ShrubberyCreationForm arvore("Arvore");
-		std::cout << arvore << std::endl;
+		arvoreform.execute(montenegro);
 
-		montenegro.signForm(arvore);
-		std::cout << arvore << std::endl;
+		RobotomyRequestForm robotform("Formulario Robot");
+		std::cout << robotform << std::endl;
 
-		ShrubberyCreationForm copiaFormulario(arvore);
-		std::cout << copiaFormulario << std::endl;
-
-		arvore.execute(montenegro);
+		montenegro.signForm(robotform);
+		std::cout << robotform << std::endl;
+		
+		robotform.execute(montenegro);
 	}
 	catch (Bureaucrat::GradeTooHighException &exception) {
 		std::cerr << "[BUREAUCRAT]: GradeTooHighException: " << exception.what()

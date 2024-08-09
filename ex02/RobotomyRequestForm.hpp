@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/23 14:27:32 by amak              #+#    #+#             */
-/*   Updated: 2024/08/09 17:14:14 by amak             ###   ########.fr       */
+/*   Created: 2024/08/09 17:08:42 by amak              #+#    #+#             */
+/*   Updated: 2024/08/09 20:21:21 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATINGFORM_HPP
-# define SHRUBBERYCREATINGFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
 # include <string>
-# include <fstream>
+# include <cstdlib> 
+# include <ctime>
 # include "AForm.hpp"
 
-const std::string GREEN = "\033[32m";
+const std::string YELLOW = "\033[33m";
 
-class ShrubberyCreationForm : public AForm {
+class RobotomyRequestForm : public AForm {
 	public:
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &otherSCForm);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm
-			&otherSCForm);
-		~ShrubberyCreationForm();
-		
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(const RobotomyRequestForm &otherRRForm);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &otherRRForm);
+		~RobotomyRequestForm();
+
 		std::string	getTarget() const;
 
 		virtual void	execute(Bureaucrat const & executor) const;
 
 	private:
-		ShrubberyCreationForm();
+		RobotomyRequestForm();
 };
 
-# endif
+#endif

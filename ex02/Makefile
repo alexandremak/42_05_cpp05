@@ -6,7 +6,7 @@
 #    By: amak <amak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 14:05:43 by amak              #+#    #+#              #
-#    Updated: 2024/08/02 20:56:18 by amak             ###   ########.fr        #
+#    Updated: 2024/08/09 17:43:48 by amak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES =	Bureaucrat.cpp \
 			AForm.cpp \
 			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
 			main.cpp
 			
 OBJECTS = $(SOURCES:.cpp=.o)
