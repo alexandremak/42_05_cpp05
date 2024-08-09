@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:10 by amak              #+#    #+#             */
-/*   Updated: 2024/06/23 14:10:49 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 23:20:09 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,24 @@ void	Bureaucrat::decrementGrade() {
 
 void	Bureaucrat::signForm(AForm &form) {
 	try {
+		std::cout << BLUE << "[BUREAUCRAT]: signForm member function called"
+			<< RESET << std::endl;
 		form.beSigned(*this);
-		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
 	catch (const AForm::GradeTooLowException &exception) {
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because his "
+			<< exception.what() << "." << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm &form) {
+	try {
+		std::cout << BLUE << "[BUREAUCRAT]: executeForm member function called"
+			<< RESET << std::endl;
+		form.execute(*this);
+	}
+	catch (const AForm::GradeTooLowException &exception) {
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because his "
 			<< exception.what() << "." << std::endl;
 	}
 }
@@ -93,6 +106,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 std::ostream	&operator<<(std::ostream &output, const Bureaucrat &bureaucrat)
 {
 	output << bureaucrat.getName() << " bureaucrat grade "
-		<< bureaucrat.getGrade() << "." << std::endl;
+		<< bureaucrat.getGrade() << ".";
 	return output;
 }

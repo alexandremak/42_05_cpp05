@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:50:56 by amak              #+#    #+#             */
-/*   Updated: 2024/06/23 14:10:31 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 22:15:49 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Bureaucrat {
 		void			incrementGrade();
 		void			decrementGrade();
 		void			signForm(AForm &form);
+		void			executeForm(AForm &form);
 		
 		class GradeTooHighException : public std::exception {
 			public:

@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 14:27:32 by amak              #+#    #+#             */
-/*   Updated: 2024/08/09 17:14:14 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/09 21:33:21 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ class ShrubberyCreationForm : public AForm {
 		
 		std::string	getTarget() const;
 
-		virtual void	execute(Bureaucrat const & executor) const;
+		virtual void	execute(Bureaucrat const &executor) const;
 
 	private:
+		std::string	_target;
+		
 		ShrubberyCreationForm();
 };
 

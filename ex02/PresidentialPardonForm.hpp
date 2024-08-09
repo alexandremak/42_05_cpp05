@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 17:08:42 by amak              #+#    #+#             */
-/*   Updated: 2024/08/09 21:33:43 by amak             ###   ########.fr       */
+/*   Created: 2024/08/09 20:45:33 by amak              #+#    #+#             */
+/*   Updated: 2024/08/09 22:10:51 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <string>
-# include <cstdlib> 
-# include <ctime>
 # include "AForm.hpp"
 
-const std::string YELLOW = "\033[33m";
 
-class RobotomyRequestForm : public AForm {
+const std::string CYAN = "\033[36m";
+
+class PresidentialPardonForm : public AForm {
 	public:
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm &otherRRForm);
-		RobotomyRequestForm &operator=(const RobotomyRequestForm &otherRRForm);
-		~RobotomyRequestForm();
-
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(const PresidentialPardonForm &otherPPForm);
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &otherPPForm);
+		~PresidentialPardonForm();
+	
 		std::string	getTarget() const;
 
 		virtual void	execute(Bureaucrat const &executor) const;
 
-	private:
-		std::string	_target;
-		
-		RobotomyRequestForm();
+		private:
+			std::string	_target;
+			
+			PresidentialPardonForm();
 };
 
 #endif
