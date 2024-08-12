@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 21:51:10 by amak              #+#    #+#             */
-/*   Updated: 2024/08/09 23:20:09 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/12 23:46:52 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	Bureaucrat::signForm(AForm &form) {
 	}
 }
 
-void	Bureaucrat::executeForm(AForm &form) {
+void	Bureaucrat::executeForm(AForm const &form) {
 	try {
 		std::cout << BLUE << "[BUREAUCRAT]: executeForm member function called"
 			<< RESET << std::endl;
