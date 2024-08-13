@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 14:07:38 by amak              #+#    #+#             */
-/*   Updated: 2024/08/02 21:22:21 by amak             ###   ########.fr       */
+/*   Updated: 2024/08/13 01:10:07 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AForm {
 		AForm();
 		AForm(const AForm &otherAForm);
 		AForm &operator=(const AForm &otherAForm);
-		~AForm();
+		virtual ~AForm();
 
 		AForm(std::string name, unsigned int gradeSign,
 			unsigned int gradeExecute);
